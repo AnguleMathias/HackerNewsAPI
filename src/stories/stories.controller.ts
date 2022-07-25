@@ -4,10 +4,20 @@ import { StoriesService } from './stories.service';
 
 @Controller('stories')
 export class StoriesController {
-  constructor(storiesService: StoriesService) {}
+  constructor(private readonly storiesService: StoriesService) {}
 
-  @Get()
-  getStories() {
-    return 'Get stories!';
+  @Get('from-last-25')
+  getTop10WordsLast25() {
+    return this.storiesService.getTop10WordsLast25();
+  }
+
+  @Get('from-last-week')
+  getTop10WordsLastWeek() {
+    return this.storiesService.getTop10WordsLastWeek();
+  }
+
+  @Get('from-last-600')
+  getTop10WordsLast600() {
+    return this.storiesService.getTop10WordsLast600();
   }
 }
