@@ -124,7 +124,9 @@ export class StoriesService {
   // Return an array of top 10 words in the titles from the last 600 stories of users with karma > 10000
   async getTop10WordsLast600() {
     /**
-     * How I would have done this:
+     * NOTE: >> The endpoint for all users is not available on the API
+     *
+     * How I would have solved this:
      *
      * 1. Get all users and filter users with karma >= 10000
      * 2. Get all stories from filtered users with karma >= 10000
