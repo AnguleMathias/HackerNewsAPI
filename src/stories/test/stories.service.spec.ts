@@ -20,4 +20,9 @@ describe('StoriesService', () => {
     const result = await service.getTop10WordsLast25();
     expect(result.result.length).toEqual(10);
   });
+
+  it('should return an array of top 10 words in the titles from the last week stories', async () => {
+    const result = await service.getTop10WordsLastWeek();
+    expect(result.result.length).toEqual(10);
+  });
 });
