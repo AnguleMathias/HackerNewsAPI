@@ -19,4 +19,10 @@ describe('StoriesController', () => {
       'result',
     );
   });
+
+  it('should return a success message on get to 10 words for last week stories', async () => {
+    expect(await storiesController.getTop10WordsLastWeek()).toHaveProperty(
+      'result',
+    );
+  });
 });
